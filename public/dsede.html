@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill extractor</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="/assets/icons/icon-96x96.png">
+    <meta name="apple-mobile-web-app-status-bar" content="white">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="white">
+</head>
+<body>
+    <div class="image-frame" id="image-frame">
+      <img class="image-frame" id="output"/>
+    </div>
+
+    
+    <form enctype="multipart/form-data" id="js-upload-form">
+      <div class="form-inline">
+        <div class="form-group">
+          <center><label for="js-upload-files" id="labelFile" class="neon-button"> Choisir une image </label></center>
+          <input type="file" class="input-file" name="file" onchange="loadFile(event)" id="js-upload-files" multiple>
+          <iframe src="http://localhost:5601/app/dashboards#/view/b9631520-ceab-11eb-a6f4-b54b003e23ce?embed=true&_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:now-15m,to:now))&_a=(description:'',filters:!(),fullScreenMode:!f,options:(hidePanelTitles:!f,useMargins:!t),panels:!((embeddableConfig:(attributes:(references:!((id:e5190290-cd63-11eb-b5ed-39e7eb9079e1,name:indexpattern-datasource-current-indexpattern,type:index-pattern),(id:e5190290-cd63-11eb-b5ed-39e7eb9079e1,name:indexpattern-datasource-layer-b4a9d1c0-77b2-4765-99c2-f9db9dac5df9,type:index-pattern)),state:(datasourceStates:(indexpattern:(layers:(b4a9d1c0-77b2-4765-99c2-f9db9dac5df9:(columnOrder:!(b9cd4199-b01e-4b7b-a511-e283e834b76e,'82546af3-c40a-4121-b4fc-914625c46fe0'),columns:('82546af3-c40a-4121-b4fc-914625c46fe0':(dataType:number,isBucketed:!f,label:'Count%20of%20records',operationType:count,scale:ratio,sourceField:Records),b9cd4199-b01e-4b7b-a511-e283e834b76e:(dataType:string,isBucketed:!t,label:'Top%20values%20of%20id.keyword',operationType:terms,params:(missingBucket:!f,orderBy:(columnId:'82546af3-c40a-4121-b4fc-914625c46fe0',type:column),orderDirection:desc,otherBucket:!t,size:5),scale:ordinal,sourceField:id.keyword)),incompleteColumns:())))),filters:!(),query:(language:kuery,query:''),visualization:(axisTitlesVisibilitySettings:(x:!t,yLeft:!t,yRight:!t),fittingFunction:None,gridlinesVisibilitySettings:(x:!t,yLeft:!t,yRight:!t),layers:!((accessors:!('82546af3-c40a-4121-b4fc-914625c46fe0'),layerId:b4a9d1c0-77b2-4765-99c2-f9db9dac5df9,position:top,seriesType:bar_stacked,showGridlines:!f,xAccessor:b9cd4199-b01e-4b7b-a511-e283e834b76e)),legend:(isVisible:!t,position:right),preferredSeriesType:bar_stacked,tickLabelsVisibilitySettings:(x:!t,yLeft:!t,yRight:!t),valueLabels:hide)),title:'',type:lens,visualizationType:lnsXY),enhancements:()),gridData:(h:15,i:'4ff07fe2-ce16-4fa0-a55f-813f94697537',w:24,x:0,y:0),panelIndex:'4ff07fe2-ce16-4fa0-a55f-813f94697537',type:lens,version:'7.13.2')),query:(language:kuery,query:'id.keyword%20:%20%22002%22%20'),tags:!(),timeRestore:!f,title:test3,viewMode:view)&hide-filter-bar=true" height="600" width="800"></iframe>
+        </div><br><br>
+        <button type="submit" class="neon-button" id="js-upload-submit" onclick="sendFile(event)">Submit</button>
+      </div>
+    </form>
+
+    
+    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="app2.js"></script>
+
+</body>
+</html>

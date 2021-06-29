@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill extractor</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="css/bootstrap.min.css">
+     <link rel="stylesheet" href="css/index.css">
+    <meta charset="UTF-8">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="/assets/icons/icon-96x96.png">
+    <meta name="apple-mobile-web-app-status-bar" content="white">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="white">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+</head>
+
+
+<div class="dropdown">
+  <button  id="myButton" type="button" data-toggle="dropdown" style="position: relative;
+top: 97px; right: 200px; 
+
+
+  color: #4f8453;
+  font-size: 16px;
+  text-decoration: none;
+
+">
+    &#9776;
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="visu.html">Mon profil</a>
+    <a class="dropdown-item" href="auth.html" onclick="resetcookie()">Se deconnecter</a>
+  </div>
+</div>
+
+   
+</head>
+<body>
+  <img src="logo_small-2.ico" style="position: relative;
+bottom: 0px; right: 0px;">
+    <br>
+    <div class="image-frame" id="image-frame">
+      <img class="image-frame" id="output"/>
+    </div>
+    <br>
+    
+    <form align="center" enctype="multipart/form-data" id="js-upload-form">
+      <div class="form-inline">
+        <div class="form-group">
+          <center><label align="center" for="js-upload-files" id="labelFile" class="neon-button"> Choisir une image </label></center>
+          <input type="file" class="input-file" name="file" onchange="loadFile(event)" id="js-upload-files" multiple>
+        </div>
+        <br>
+        <button type="submit" class="neon-button" id="js-upload-submit" onclick="sendFile(event)" align="center">Envoyer
+        </button>
+      </div>
+
+    </form>
+    <script>
+      window.addEventListener('load', function() {
+        if(document.cookie == ""){
+          document.location.href="http://localhost:3000/auth.html";
+          
+      }
+          }, false);
+    </script>
+    <script>
+      function resetcookie(){
+        document.cookie = "idUser=; expires=Mon, 02 Oct 2000 01:00:00 GMT; path=/";
+        swal("Vous êtes déconnecté");
+      }
+      </script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/app2.js"></script>
+</body>
+</html>
+
