@@ -39,7 +39,11 @@ function loadFile(event) {
    
 }
     async function sendFile(event) {
-   
+   	swal("Image en cours de traitement", {
+  	buttons: false,
+  	icon: "info",
+  	closeOnClickOutside: false,
+  		});
         event.preventDefault();
          await fetch('http://15.237.169.44:8000', {
             method: 'POST',
@@ -53,7 +57,9 @@ function loadFile(event) {
             console.log("temp ", temp);
             return temp;
         }).then(text => {
-            swal("Votre image a bien été envoyée",JSON.stringify(text),"success");	 
+            swal.close()
+            document.getElementById('response').innerHTML = JSON.stringify(text)
+            swal("Succès",JSON.stringify(text),"success");	 
         });
 
     
