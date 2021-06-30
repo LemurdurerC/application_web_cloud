@@ -41,9 +41,12 @@ function loadFile(event) {
     async function sendFile(event) {
    
         event.preventDefault();
-        await fetch('http://localhost:8000', {
+         await fetch('http://15.237.169.44:8000', {
             method: 'POST',
-            body: data
+            body: data,
+            headers: {'Allow-Control-Allow-Origin': '*'
+            }
+            
         }).then(response => {
             console.log("myData1: ", response);
             var temp = response.json();
